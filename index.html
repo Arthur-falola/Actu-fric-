@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actu Fric</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Modale de partage -->
+        <div id="shareModal" class="modal">
+            <div class="modal-content">
+                <span id="closeModal" class="close">&times;</span>
+                <h2>Partagez ce site avec 5 amis sur WhatsApp pour accéder au contenu !</h2>
+                <a href="https://wa.me/?text=Découvrez%20ce%20site%20Actu%20Fric%20pour%20gagner%20de%20l'argent%20en%20ligne%20facilement.%20https://votre-lien.com" target="_blank" class="btn">Partager sur WhatsApp</a>
+            </div>
+        </div>
+
+        <!-- Contenu principal de la page -->
+        <header>
+            <img src="icon.png" alt="Icône du site">
+            <h1>Bienvenue sur Actu Fric</h1>
+        </header>
+
+        <main id="mainContent" style="display: none;">
+            <section>
+                <h2>Commencez à gagner de l'argent en ligne facilement !</h2>
+                <p>Découvrez des opportunités incroyables pour augmenter vos revenus depuis chez vous.</p>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Ouvrir la modale au chargement
+        window.onload = function() {
+            document.getElementById("shareModal").style.display = "block";
+        };
+
+        // Fermer la modale
+        document.getElementById("closeModal").onclick = function() {
+            document.getElementById("shareModal").style.display = "none";
+        };
+
+        // Quand l'utilisateur clique sur le bouton de partage
+        document.querySelector(".btn").onclick = function() {
+            document.getElementById("shareModal").style.display = "none";
+            document.getElementById("mainContent").style.display = "block"; // Déverrouiller le contenu
+        };
+    </script>
+</body>
+</html>
